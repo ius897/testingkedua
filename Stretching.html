@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stretching Harian</title>
+    <link rel="stylesheet" href="stretching.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="exercise-container">
+        <div class="visual-area">
+            <div class="exercise-image-placeholder">
+                <i class="fas fa-hand-holding-medical"></i> 
+            </div>
+        </div>
+
+        <div class="instruction-area">
+            <div class="timer-value" id="timer-display">
+                MULAI
+            </div> 
+        </div>
+
+        <div class="controls">
+            <button class="control-button play-button" id="play-button">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="control-button pause-button">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button class="control-button stop-button" id="stop-button">
+                <i class="fas fa-stop"></i>
+            </button>
+        </div>
+
+        <div class="details-area">
+            <p>
+                Repetisi: Tahan 60 detik untuk setiap sisi
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        const playButton = document.getElementById('play-button');
+        const timerDisplay = document.getElementById('timer-display');
+        let isPlaying = false;
+
+        playButton.addEventListener('click', () => {
+            if (!isPlaying) {
+                timerDisplay.textContent = "SEDANG BERLANGSUNG";
+                isPlaying = true;
+            } else {
+            }
+        });
+        
+        document.getElementById('stop-button').addEventListener('click', () => {
+            timerDisplay.textContent = "MULAI";
+            isPlaying = false;
+        });
+
+    </script>
+    
+    <nav class="bottom-nav">
+        <a href="programlatihan.html" class="nav-item active">
+            <i class="fas fa-running"></i>
+            <span>Latihan</span>
+        </a>
+    </nav>
+</body>
+</html>

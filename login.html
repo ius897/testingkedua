@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepoSe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="page-container page-register">
+        <header class="header-register">
+            <h1>RepoSe</h1> 
+            <p>Improve your posture, improve your life</p>
+        </header>
+
+        <form class="form-container">
+            <label for="nama_lengkap">Nama Lengkap</label>
+            <input type="text" id="nama_lengkap" value="You" placeholder="Masukkan Nama Lengkap">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" value="you@gmail.com" placeholder="Masukkan Email">
+            
+            <button type="button" id="startJourneyBtn" class="btn-primary">
+                Mulai Perjalanan Postur
+            </button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('startJourneyBtn').addEventListener('click', function() {
+  
+            window.location.href = 'bodyscan.html';
+        });
+    </script>
+
+</body>
+</html>

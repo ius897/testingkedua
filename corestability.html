@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Stability</title>
+    <link rel="stylesheet" href="corestability.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="exercise-container">
+        <header class="exercise-header">
+        </header>
+
+        <div class="visual-area">
+            <div class="exercise-image-placeholder">
+                <i class="fas fa-child"></i> 
+            </div>
+        </div>
+
+        <div class="timer-area">
+            <div class="timer-value" id="timer-display">01:00</div> 
+        </div>
+
+        <div class="controls">
+            <button class="control-button play-button" id="play-button">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="control-button pause-button" id="pause-button">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button class="control-button stop-button" id="stop-button">
+                <i class="fas fa-stop"></i>
+            </button>
+        </div>
+
+        <div class="details-area">
+            <p class="repetition-text">
+                **Repetisi:** Tahan selama 60 detik
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        const timerDisplay = document.getElementById('timer-display');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        let totalSeconds = 60; // 1 Menit
+        let timeLeft = totalSeconds;
+        let timerInterval;
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            const displayMinutes = String(minutes).padStart(2, '0');
+            const displaySeconds = String(seconds).padStart(2, '0');
+            
+            timerDisplay.textContent = `${displayMinutes}:${displaySeconds}`;
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timerDisplay.textContent = "DONE";
+                    return;
+                }
+                timeLeft--;
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            timeLeft = totalSeconds;
+            updateTimerDisplay();
+        }
+
+        playButton.addEventListener('click', startTimer);
+        pauseButton.addEventListener('click', pauseTimer);
+        stopButton.addEventListener('click', stopTimer);
+
+        updateTimerDisplay();
+    </script>
+    
+    <nav class="bottom-nav">
+        <a href="programlatihan.html" class="nav-item active">
+            <i class="fas fa-running"></i>
+            <span>Latihan</span>
+        </a>
+    </nav>
+
+</body>
+</html>

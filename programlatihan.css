@@ -1,0 +1,136 @@
+/* --- Global Reset & Body Styling --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Background abu-abu muda */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Untuk menempatkan nav bar di bawah */
+}
+
+.container {
+    flex-grow: 1; /* Konten mengisi ruang yang tersisa */
+    padding: 20px;
+    padding-bottom: 80px; /* Ruang untuk bottom nav */
+}
+
+/* --- Header Styling --- */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+header p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+/* --- Program Card Styling --- */
+.program-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar card */
+}
+
+.program-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Latar belakang card putih */
+    padding: 15px;
+    border-radius: 15px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Bayangan tipis */
+    text-decoration: none; /* Hilangkan garis bawah link */
+    color: inherit; /* Gunakan warna teks dari parent */
+    transition: transform 0.2s;
+}
+
+.program-card:hover {
+    transform: translateY(-2px);
+}
+
+.icon-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Ukuran placeholder icon */
+    font-weight: bold;
+}
+
+/* Warna-warna Icon Sesuai Gambar */
+.target-icon {
+    background-color: #fce4e4; /* Merah muda sangat muda */
+}
+.stretch-icon {
+    background-color: #f7e6ff; /* Ungu muda sangat muda */
+}
+.power-icon {
+    background-color: #ffe6f2; /* Pink/Kuning muda */
+}
+.core-icon {
+    background-color: #e6f7ff; /* Biru muda sangat muda */
+}
+
+.program-details h2 {
+    font-size: 18px;
+    margin: 0 0 4px 0;
+    color: #000;
+}
+
+.program-details p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+/* --- Bottom Navigation Bar Styling --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px; /* Tinggi navigasi */
+    background-color: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #888; /* Warna icon tidak aktif */
+    font-size: 12px;
+    transition: color 0.3s;
+    flex-grow: 1; /* Membuat item nav mengisi ruang secara merata */
+    padding: 5px 0;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.nav-item.active {
+    color: #4CAF50; /* Warna icon aktif (Hijau, sesuaikan jika perlu) */
+    font-weight: bold;
+}

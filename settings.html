@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Reminder</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="settings.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pengaturan Reminder</h1>
+            <p>Atur pengingat untuk menjaga postur yang baik</p>
+        </header>
+
+        <main class="settings-list">
+            
+            <div class="setting-card">
+                <div class="setting-info">
+                    <h3>Posture Reminder</h3>
+                    <p>Pengingat cek postur berkala</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="setting-card frequency-setting">
+                <div class="setting-info">
+                    <h3>Frekuensi Reminder</h3>
+                    <p>Setiap <span id="selected-freq">45 menit</span></p>
+                </div>
+                <div class="custom-select-wrapper">
+                    <div class="custom-select" id="freq-display">45 menit</div>
+                    <div class="options-container" id="freq-options">
+                        <label class="option-item">
+                            <input type="radio" name="frequency" value="30 menit" checked>
+                            30 menit
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="frequency" value="45 menit">
+                            45 menit
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="frequency" value="1 jam">
+                            1 jam
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="frequency" value="2 jam">
+                            2 jam
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setting-card">
+                <div class="setting-info">
+                    <h3>Latihan Harian</h3>
+                    <p>Reminder latihan rutin</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+        </main>
+    </div>
+
+    <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item active">
+        <i class="fas fa-home"></i> <span>Home</span>
+    </a>
+    <a href="programlatihan.html" class="nav-item">
+        <i class="fas fa-running"></i> <span>Latihan</span>
+    </a>
+    <a href="ai.html" class="nav-item">
+        <i class="fas fa-robot"></i> <span>AI</span>
+    </a>
+    <a href="settings.html" class="nav-item">
+        <i class="fas fa-cog"></i> <span>Settings</span>
+    </a>
+    </nav>
+    
+    <script src="settings.js"></script>
+</body>
+</html>
